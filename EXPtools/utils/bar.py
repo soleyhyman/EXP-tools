@@ -136,7 +136,7 @@ class barCalcs:
         """
         sinComponent = np.imag(self.mnCoefs[m,n])
         cosComponent = np.real(self.mnCoefs[m,n])
-        barAngle = np.arctan2(sinComponent,cosComponent)*u.rad
+        barAngle = (1./m)*np.arctan2(sinComponent,cosComponent)*u.rad
         if degrees==True:
             return barAngle.to(u.deg)
         else:
