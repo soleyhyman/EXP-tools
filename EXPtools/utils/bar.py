@@ -166,11 +166,11 @@ class barCalcs:
         barAngle = np.unwrap(self.getBarAngle(n=n,m=m))
         dtheta_dt = np.diff(barAngle)/self.dt
         if self.tUnit is None:
-            return dtheta_dt/2.
+            return dtheta_dt
         elif pUnit is None:
-            return dtheta_dt/2.
+            return dtheta_dt
         else:
-            return (dtheta_dt/2.).to(pUnit)
+            return (dtheta_dt).to(pUnit)
 
     def getBarStrength(self, n=0):
         """
